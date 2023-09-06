@@ -1,156 +1,94 @@
-const numbers = [60,45,4,9,16,25,40];
+let maxValue = [2,3,4,5,9,0,10,25];
 
-let first = numbers.find((item) => {
-    return item > 18;
-});
+console.log(Math.max(...maxValue));
 
-console.log(first)
+let arrayvalue1 = [1,2,3,4,5];
+let arrayvalue2 = [8,9,7,9,8,3];
+let finalarrayvalue = [...arrayvalue1, ...arrayvalue2];
 
-function showMessage() {
-    console.log("Hello after the delay!");
+console.log(finalarrayvalue);
+
+let object4 = {
+    personalvalue: 'John',
+    age: 26,
+    mail: 'mail@mail.com'
 }
 
-setTimeout(showMessage, 2000);
+let {personalvalue:x, age, mail} = object4;
+console.log(x);
 
-const inventory = [
-    { name: "apples", quantity: 2 },
-    { name: "bananas", quantity: 0 },
-    { name: "cherries", quantity: 5 },
-  ];
+const company = {
+    name: "ABC corp",
+    address: {
+        street: '3631 Archgate Ct',
+        city: 'Alpharetta'
+    },
+};
 
-  const findEle = inventory.find((item)=> {
-      return item.name === 'cherries'
-  })
+const {name, address:{city}} = company;
 
-  console.log(findEle);
+console.log(city)
 
-  let num = [1,2,4,5,6,8,9,11,13,22];
+const numb = [8,29,44,43,11,33,55,64,34,67];
 
-  const numEle = num.filter((item) => {
-      return item % 2 === 0;
-  })
-
-  console.log(numEle);
-
-  let numOdd = num.filter((item)=> {
-      return item % 2 !== 0;
-  })
-  console.log(numOdd);
-
-  console.log(Math.max(...num));
-
-  const doubleNum = num.map((item)=> {
-      return item * 2
-  })
-  console.log(doubleNum);
-
-  const cars =["BMW","Audi", "Ferarri", "Volvo","Bogatti"];
-
-  cars.forEach((item,index)=> {
-      console.log(`${index}: ${item}`)
-  })
-
-  cars.forEach((item,index)=> {
-      const startNum = index + 1;
-      console.log(`${startNum}: ${item}`)
-  })
-
-  const arr = ["Item1", "Item2", "Item3",  "Item4", "Item5"];
-
-  for(let count=arr.length-1; count>=0; count--) {
-      console.log(`${arr}[${count}]`)
-  }
-
-  const person = {
-      firstname: 'Sai',
-      lastname: 'Mutoopuri',
-      age: 50,
-      education: true,
-      married: true,
-      friends: ['Hanuman', 'community', 'teaarea'],
-      greeting: () => console.log("Hi everyone")
-  }
-
-  console.log(person.firstname);
-  person.greeting();
-
-  const numValues = [1,2,3,4,5,6];
-
-  const totalvalue = numValues.reduce((acc,currentValue)=>{
-      return acc + currentValue
-  },0);
-  console.log(totalvalue)
-
-  const items =[
-    {name: "Bike", price: 100},
-    {name: "TV", price: 200},
-    {name: "Album", price: 20},
-    {name: "Book", price: 5},
-    {name: "phone", price: 200},
-    {name: "Computer", price: 1000},
-    {name: "keyboard", price: 25},
-];
-
-const nameValue = items.map((item)=> {
-    return item.price <= 100;
-    
+const odds = numb.filter((item)=> {
+    return item % 2 !== 0;
 })
 
-console.log(nameValue);
+console.log(odds);
 
-const hasInexpensiveItems = items.every((item) => {
-    return item.price  <= 200
+const even = numb.filter((item)=> {
+    return item % 2 === 0;
 })
+console.log(even)
 
-console.log(hasInexpensiveItems);
+const datadup = [3,4,3,4,5,6,9,9,6,5,4,2,1,3,2];
 
-const totalprod = items.reduce((acc, currentTotal) => {
-    return currentTotal.price  + acc
-}, 0)
-console.log(totalprod);
+const uniqueval = [...new Set(datadup)];
 
-// const fetchPokemon = () => {
-//     const url = 'google.com';
-//     fetch(url)
-//     .then((res)=> {
-//         return res.json
-//     })
-//     .then((data)=> {
-//         console.log(data)
-//     })
-// }
+console.log(uniqueval);
+
+const asec = uniqueval.sort((a,b) => a - b);
+
+console.log(asec);
+
+const desc = uniqueval.sort((a, b) => b - a);
+
+console.log(desc);
 
 
-// async function getData() {
-//     try {
+// fetch(url [,option])
+// .then(response => response.json())
+//.then(data => {
+    // process the fetched data
+// })
 
-//         const response = await fetch("googlle.com");
-//         const data  = await response.json();
-//         console.log(data);
-        
-//     } catch (error) {
-//         console.log("error:", error)
-//     }
-// }
+// .catch(error => {
+//    console.log(error)
+//})
 
-// getData();
+const person = {
+    name: 'Ram',
+    age: 30
+}
+ console.log(Object.entries(person));
+const getObjectEntries = (obj) => {
+    const objKeys = Object.keys(obj);
+    console.log(objKeys);
+    const result = objKeys.map((item)=> {
+        const value = obj[item];
+        return [ item, value]
+    });
+    return result;
+}
+
+const res = getObjectEntries(person);
+console.log(res);
 
 
-const sortNum = [...numbers].sort((a,b)=> a - b);
-console.log(sortNum);
+const myarry = [1,2,3,4,5,4,3,2,1,6,4,6,5];
 
-const bigNum = [...numbers].sort((a,b)=> b - a);
+const univalue = myarry.filter((item,index,array)=> array.indexOf(item)===index);
 
-console.log(bigNum)
+console.log(univalue);
 
-const data = [2,3,2,4,4,5,5,6,9,1,1];
-
-const removeduplicate = [...new Set(data)];
-
-console.log(removeduplicate)
-
-const descor = removeduplicate.sort((a,b) =>{ 
-    console.log(`valuea: ${a} : valueb: ${b}`)
-    a - b 
-});
-console.log(descor);

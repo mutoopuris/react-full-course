@@ -2,7 +2,8 @@ import React, { useState, useEffect } from "react";
 
 const URL = "https://jsonplaceholder.typicode.com/users";
 
-const Finalexample1 = () => {
+const Finalexample1 = (props) => {
+  console.log(props)
   const [usersData, setUsersData] = useState([]);
   const [loading, setLoading] = useState(false);
   const [isError, setIsError] = useState({ status: false, msg: "" });
@@ -35,6 +36,7 @@ const Finalexample1 = () => {
   if (loading) {
     return (
       <div>
+        <h1>{props.firstName}</h1>
         <h3>Loading...</h3>
       </div>
     );

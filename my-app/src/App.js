@@ -15,7 +15,15 @@ import ComplexState from './1-useState/final/ComplexState';
 
 import ConditionalRendering from './1-useState/final/ConditionalRendering';
 import ComplexForm from './1-useState/final/ComplexForm';
-import CleanupEffect from './CleanupEffect/final/CleanupEffect'
+
+
+
+import Greeting from './1-useState/final/Greeting';
+import GoodGreeting from './1-useState/final/GoodGreeting';
+import ExampleRefComponent from './1-useRef/final/ExampleComponent';
+
+import ExampleUseRef from './1-useRef/final/ExampleUseRef';
+import CleanUpExample from './1-useState/final/CleanUpExample';
 
 function App() {
   return (
@@ -25,7 +33,8 @@ function App() {
      <Final2/>
      <br/>
      <br/>
-     <Final3/>
+     <CleanUpExample/>
+     {/* <Final3/>
      <br/>
      <br/>
      <br/>
@@ -37,7 +46,7 @@ function App() {
      <br/>
      <FinalAdvance/>
      <br/>
-    <Finalexample1/>
+    <Finalexample1 firstName ="Sai Kumar" lasName="Mutoopuri" age="46"/>
     <br/>
     <br/>
     <FetchDataFromAPI/>
@@ -59,7 +68,17 @@ function App() {
     <ComplexForm/>
     <br/>
     <br/>
-    <CleanupEffect/>
+    
+    <br/>
+  
+
+    <Greeting />
+
+    <GoodGreeting firstName ="Sai Kumar" lasName="Mutoopuri" age="46"/>
+    <ExampleRefComponent/>
+    <br/>
+    <br/>
+    <ExampleUseRef/> */}
     </div>
     
   );
